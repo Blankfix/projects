@@ -7,7 +7,7 @@ class User{
     public $email;
     public $password;
     public $role;
-    public $groupe;
+    public $group;
     public $phone;
     public function __construct($id, $email, $password, $role){
         $this->id = $id;
@@ -126,4 +126,3 @@ class User{
     }
      
 }
-?>

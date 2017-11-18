@@ -1,5 +1,5 @@
 <?php
-	include('views/layout/head.php');
+    require_once('views/layout/head.php');
 	/*
 	include 'models/inc/database.php';
 	$request = $sql->query('SELECT * FROM user');
@@ -18,5 +18,4 @@
 	Pas connecté
 <?php
 	}
-	include('views/layout/footer.php');
-?>
+    require_once('views/layout/footer.php');
