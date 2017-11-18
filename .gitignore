@@ -5,3 +5,4 @@ vcs.xml
 modules.xml
 projects.iml
 *.idea
+models/inc/database.php
