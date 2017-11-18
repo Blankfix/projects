@@ -15,7 +15,7 @@
 <?php
 	}else{
 ?>
-	Pas connecté
+	Pas connectés
 <?php
 	}
 	include('views/layout/footer.php');
