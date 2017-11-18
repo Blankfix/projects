@@ -8,14 +8,14 @@
 	  echo $data['firstname'].' '.$data['lastname'].' : connecté '.$data['email'];
 	}
 	*/
-	session_start();
+	//session_start();
 	if (isset($_SESSION)) {
 ?>
 	Connecté
 <?php
 	}else{
 ?>
-	Pas connectés
+	Pas connecté
 <?php
 	}
 	include('views/layout/footer.php');
