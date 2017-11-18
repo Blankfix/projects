@@ -10,9 +10,13 @@
 	*/
 	session_start();
 	if (isset($_SESSION)) {
-		
+?>
+	Connecté
+<?php
 	}else{
-		
+?>
+	Pas connecté
+<?php
 	}
 	include('views/layout/footer.php');
 ?>
