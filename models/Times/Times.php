@@ -1,5 +1,5 @@
 <?php
-    $request = $db->query('SELECT * from project');
-    while ($data = $request->fetch()){
+    $request = $sql->query('SELECT * from project');
+    while ($data = $results->fetch()){
         echo $data['title'];
     }
