@@ -1,4 +1,5 @@
 <?php
+    require_once('models/inc/database.php');
     require_once('views/layout/head.php');
 	/*
 	include 'models/inc/database.php';
@@ -14,8 +15,7 @@
 	Connecté
 <?php
 	}else{
-?>
-	Pas connecté
-<?php
+        require_once('views/Login/login_form.php');
+        require_once('models/Times/Times.php');
 	}
     require_once('views/layout/footer.php');
