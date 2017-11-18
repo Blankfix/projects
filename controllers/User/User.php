@@ -1,5 +1,5 @@
 <?php
-include '/models/inc/database.php';
+
 class User{
 	public $id;
     public $firstname;
