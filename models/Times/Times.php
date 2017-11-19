@@ -15,9 +15,3 @@ class Times{
         return $data;
     }
 }
-
-$times = new Times();
-$getTimes = $times->getAllTimes();
-while ($result = $getTimes->fetchAll(PDO::FETCH_OBJ)){
-    var_dump($result);
-}

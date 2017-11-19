@@ -17,6 +17,9 @@ function call($controller, $action)
         case 'User/Login':
             $controller = new LoginController();
             break;
+        case 'times':
+            $controller = new LoginController();
+            break;
     }
 
     $controller->{$action}();
