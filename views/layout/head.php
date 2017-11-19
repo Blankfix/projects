@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-        <?php require_once('assets/inc/styles/home.php'); ?>
+        <meta charset="UTF-8" />
+        <?php require_once(BASEURL.'/assets/inc/styles/home.php'); ?>
 	</head>
 	<body>
 		header
