@@ -3,7 +3,7 @@
 
 //define('BASEURL',  $_SERVER['SERVER_NAME'] . '/projects/', false);
 //define('BASEURL', $_SERVER['DOCUMENT_ROOT'] . '/projects/', false);
-define('BASEURL', dirname(__FILE__), false);
+define('BASEURL', realpath());
 echo BASEURL;
 
 function call($controller, $action)

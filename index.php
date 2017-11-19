@@ -1,9 +1,9 @@
 <?php
     require_once('models/inc/database.php');
     require_once('routes.php');
-
+    $test = BASEURL;
+    
     require_once(BASEURL . 'views/layout/head.php');
-    var_dump(BASEURL . 'views/layout/head.php');
 
 
 
