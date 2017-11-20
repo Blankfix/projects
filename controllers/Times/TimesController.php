@@ -40,4 +40,3 @@ class TimesController{
         return $tableContent;
     }
 }
-new TimesController();

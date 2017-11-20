@@ -3,12 +3,11 @@
     require_once('routes.php');
 
     require_once(BASEURL . 'views/layout/head.php');
-    require_once(BASEURL . 'controllers/Times/TimesController.php');
 
 
-
+call('Times');
 //    var_dump(BASEURL. 'routes.php');
-    die;
+
 
 	/*
 	include 'models/inc/database.php';
@@ -20,16 +19,16 @@
 	*/
 	//session_start();
 
-    $db = new Database('db710253047');
+//    $db = new Database('db710253047');
 //    $data = $db->query('SELECT * FROM user');
-    $data = $db->query("INSERT INTO user VALUES ('', 'test', 'test', 'test', 'test', 'test', '1234567890', 5)");
+//    $data = $db->query("INSERT INTO user VALUES ('', 'test', 'test', 'test', 'test', 'test', '1234567890', 5)");
 //    $data = $db->query("SELECT * FROM user");
 //    $result = $data->fetch();
 
-
+/*
     echo '<pre>',
     var_dump($result);
-    echo '</pre>';
+    echo '</pre>';*/
 
 //INSERT INTO client (prenom, nom, ville, age)
 // VALUES
