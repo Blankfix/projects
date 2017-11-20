@@ -1467,7 +1467,7 @@ function taskDebounce(fn) {
 
 // It's common for MutationObserver polyfills to be seen in the wild, however
 // these rely on Mutation Events which only occur when an element is connected
-// to the DOM. The algorithm used in this module does not use a connected element,
+// to the DOM. The algorithm used in this theme does not use a connected element,
 // and so we must ensure that a *native* MutationObserver is available.
 var supportsNativeMutationObserver = isBrowser && isNative(window.MutationObserver);
 
@@ -3777,7 +3777,7 @@ var Popper = function () {
      * include `popper-utils.js` before `popper.js`.
      *
      * **DEPRECATION**: This way to access PopperUtils is deprecated
-     * and will be removed in v2! Use the PopperUtils module directly instead.
+     * and will be removed in v2! Use the PopperUtils theme directly instead.
      * Due to the high instability of the methods contained in Utils, we can't
      * guarantee them to follow semver. Use them at your own risk!
      * @static
