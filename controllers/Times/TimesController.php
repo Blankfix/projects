@@ -8,16 +8,36 @@
 require_once (BASEURL.'models/Times/Times.php');
 
 class TimesController{
-    private function getRowsTimes(){
+
+    protected $do = null;
+
+    public function __construct() {
+
+        switch ($_SERVER['QUERY_STRING']){
+            case 'global':
+            default:
+                $content = $this->getRowsTimes();
+                include(BASEURL.'views/Times/times_table.php');
+                break;
+        }
+    }
+
+    public function getRowsTimes(){
         $times = new Times();
         $getTimes = $times->getAllTimes();
-        $rows = array();
-        while ($result = $getTimes->fetchAll(PDO::FETCH_OBJ)){
-            array_push ( $rows, $result );
+
+        $tableContent = array();
+        $tableContent['thead'] = array();
+        $tableContent['tbody'] = array();
+
+        while ($result = $getTimes->fetchColumn (PDO::FETCH_OBJ)){
+            array_push ( $tableContent['thead'], $result );
         }
-        return $rows;
-    }
-    public function displayRowsTimes(){
-        
+        while ($result = $getTimes->fetchAll(PDO::FETCH_OBJ)){
+            array_push ( $tableContent['tbody'], $result );
+        }
+        var_dump($tableContent);
+        return $tableContent;
     }
 }
+new TimesController();
