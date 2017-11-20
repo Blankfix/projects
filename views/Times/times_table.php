@@ -5,8 +5,9 @@
  * Date: 19/11/2017
  * Time: 12:50
  */
+var_dump($content);
 ?>
-<table>
+<table class="table table-striped table-bordered table-hover table-responsive">
     <thead>
         <tr>
             <th></th>

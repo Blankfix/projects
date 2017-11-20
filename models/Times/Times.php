@@ -1,5 +1,4 @@
 <?php
-require_once('../../models/inc/database.php');
 
 class Times{
     public function getAllTimes(){

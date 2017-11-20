@@ -29,14 +29,14 @@ class TimesController{
         $tableContent = array();
         $tableContent['thead'] = array();
         $tableContent['tbody'] = array();
-
-        while ($result = $getTimes->fetchColumn (PDO::FETCH_OBJ)){
+        /*
+        while ($result = $getTimes->fetchAll (PDO::FETCH_COLUMN)){
+            var_dump($result);
             array_push ( $tableContent['thead'], $result );
-        }
+        }*/
         while ($result = $getTimes->fetchAll(PDO::FETCH_OBJ)){
             array_push ( $tableContent['tbody'], $result );
         }
-        var_dump($tableContent);
         return $tableContent;
     }
 }
