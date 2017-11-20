@@ -5,12 +5,26 @@
  * Date: 19/11/2017
  * Time: 12:50
  */
-var_dump($content);
 ?>
 <table class="table table-striped table-bordered table-hover table-responsive">
     <thead>
         <tr>
-            <th></th>
+            <?php
+                foreach( $content['thead'] as $col ){
+                    echo '<th>' . $col . '</th>';
+                }
+            ?>
         </tr>
     </thead>
+    <tbody>
+        <tr>
+            <?php
+                foreach( $content['tbody'] as $row ){
+                    foreach($row as $key => $value) {
+                        echo '<td>' . $value . '</td>';
+                    }
+                }
+            ?>
+        </tr>
+    </tbody>
 </table>

@@ -25,18 +25,30 @@ class TimesController{
     public function getRowsTimes(){
         $times = new Times();
         $getTimes = $times->getAllTimes();
+        $getCols = $times->getAllTimes();
+        $getRows = $times->getAllTimes();
 
         $tableContent = array();
         $tableContent['thead'] = array();
         $tableContent['tbody'] = array();
-        /*
-        while ($result = $getTimes->fetchAll (PDO::FETCH_COLUMN)){
-            var_dump($result);
-            array_push ( $tableContent['thead'], $result );
+
+        /*foreach ($getCols as $col){
+            array_push ( $tableContent['thead'], array_keys( $col ) );
         }*/
-        while ($result = $getTimes->fetchAll(PDO::FETCH_OBJ)){
-            array_push ( $tableContent['tbody'], $result );
+
+        foreach ($getCols as $col){
+            $colType = array_keys( $col );
+            foreach($colType as $key => $value) {
+                if( !is_numeric( $value ) ){
+                    array_push ( $tableContent['thead'], $value );
+                }
+            }
         }
+
+        while ($row = $getRows->fetch(PDO::FETCH_OBJ)){
+            array_push ( $tableContent['tbody'], $row );
+        }
+
         return $tableContent;
     }
 }
