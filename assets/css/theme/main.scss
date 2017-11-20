@@ -1,0 +1,125 @@
+// Table of content
+
+// Colors
+// Bg Colors
+// Menu
+
+// Colors
+
+$grey-1:  #666;
+$grey-2:  #595959;
+$grey-3:  #39383a;
+$grey-4:  #282729;
+$black:   #000;
+$white:   #FFF;
+$green:   #8ac54d;
+$rose:    #e1765a;
+
+.bg-grey-1 {
+  background-color: $grey-1;
+}
+.bg-grey-2 {
+  background-color: $grey-2;
+}
+.bg-grey-3 {
+  background-color: $grey-3;
+}
+.bg-grey-4 {
+  background-color: $grey-4;
+}
+
+.bg-black {
+  background-color: $black;
+}
+.bg-white {
+  background-color: $white;
+}
+
+.bg-green {
+  background-color: $green;
+}
+
+.bg-rose {
+  background-color: $rose;
+}
+
+
+///----------------------
+
+.grey-1 {
+  color: $grey-1;
+}
+.grey-2 {
+  color: $grey-2;
+}
+.grey-3 {
+  color: $grey-3;
+}
+.grey-4 {
+  color: $grey-4;
+}
+
+.green {
+  color: $green;
+}
+
+.rose {
+  color: $rose;
+}
+
+
+
+.black {
+  color: $black;
+}
+.white {
+  color: $white;
+}
+
+
+//.grey {
+//  color: #666;
+//}
+//
+//.dark-grey {
+//  color: #39383a;
+//}
+//
+//.white {
+//  color: #FFF;
+//}
+//
+//// Bg Colors
+//.bg-grey {
+//  background-color: #666;
+//}
+//
+//.bg-dark-grey {
+//  background-color: #39383a;
+//}
+//.bg-white {
+//  background-color: #FFF;
+//}
+
+// Menu
+.menu {
+
+  height: 100vh;
+
+  &.light {
+    background-color: $grey-1;
+
+    & .menu_header {
+      background-color: $grey-2;
+    }
+  }
+  &.dark {
+    background-color: $grey-3;
+
+    & .menu_header {
+      background-color: #282729;
+    }
+  }
+}
+
+
