@@ -1,11 +1,11 @@
 <?php
-    require_once('models/inc/database.php');
     require_once('routes.php');
+    require_once(MODEL.'inc/database.php');
+    require_once(CONTROLLER.'inc/translation.php');
 
-    require_once(BASEURL . 'views/layout/head.php');
+    require_once(SKELETON.'head.php');
 
 
-call('Times');
 //    var_dump(BASEURL. 'routes.php');
 
 
@@ -48,13 +48,13 @@ call('Times');
 //$insert->execute();
 
 
-
+    session_start();
 	if (isset($_SESSION))
 	{
-	    echo 'Connecté';
+        call('Times');
 	}
 	else
     {
-        require_once('views/Login/login_form.php');
+        require_once(VIEW.'Login/login_form.php');
 	}
-    require_once('views/layout/footer.php');
+    require_once(SKELETON.'footer.php');

@@ -10,21 +10,34 @@
     <thead>
         <tr>
             <?php
-                foreach( $content['thead'] as $col ){
-                    echo '<th>' . $col . '</th>';
+                foreach( current( $content['entries'] ) as $col => $cell)
+                {
+                    if($col != 'id' && $col != 'status')
+                    {
+                        echo '<th>' . _t($col) . '</th>';
+                    }
                 }
             ?>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <?php
-                foreach( $content['tbody'] as $row ){
-                    foreach($row as $key => $value) {
-                        echo '<td>' . $value . '</td>';
-                    }
-                }
-            ?>
-        </tr>
+        <?php
+            foreach( $content['entries'] as $row )
+            {
+        ?>
+                <tr data-id="<?php echo $row['id']; ?>" data-status="<?php echo $row['status']; ?>">
+                    <?php
+                        foreach( $row as $col => $cell )
+                        {
+                            if($col != 'id' && $col != 'status')
+                            {
+                                echo '<td>' . $cell . '</td>';
+                            }
+                        }
+                    ?>
+                </tr>
+        <?php
+            }
+        ?>
     </tbody>
 </table>

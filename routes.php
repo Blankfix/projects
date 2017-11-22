@@ -7,6 +7,8 @@ define('BASEURL', realpath());
 define('MODEL', realpath().'models/');
 define('CONTROLLER', realpath().'controllers/');
 define('VIEW', realpath().'views/');
+define('LAYOUT', realpath().'views/layout/');
+define('SKELETON', realpath().'views/layout/global/');
 define('CSS', realpath().'assets/css/');
 define('JS', realpath().'assets/js/');
 define('IMG', realpath().'assets/img/');
@@ -21,7 +23,7 @@ function call($controller, $action)
         case 'User/Login':
             $controller = new LoginController();
             break;
-        case 'Times':
+        case 'Project':
             require_once( CONTROLLER . $controller. '/'. $controller . 'Controller.php' );
             $controller = new TimesController();
             break;

@@ -5,50 +5,35 @@
  * Date: 19/11/2017
  * Time: 12:52
  */
-require_once (BASEURL.'models/Times/Times.php');
 
 class TimesController{
 
     protected $do = null;
 
-    public function __construct() {
-
-        switch ($_SERVER['QUERY_STRING']){
-            case 'global':
-            default:
-                $content = $this->getRowsTimes();
-                include(BASEURL.'views/Times/times_table.php');
-                break;
-        }
+    protected function className(){
+        return chop(__CLASS__ , 'Controller');
     }
 
-    public function getRowsTimes(){
-        $times = new Times();
-        $getTimes = $times->getAllTimes();
-        $getCols = $times->getAllTimes();
-        $getRows = $times->getAllTimes();
+    protected function classModel(){
+        require_once ( MODEL. $this->className() . '/' . $this->className() . '.php');
+    }
 
-        $tableContent = array();
-        $tableContent['thead'] = array();
-        $tableContent['tbody'] = array();
+    protected function classExtends(){
+        require_once ( CONTROLLER. 'Project/ProjectController.php');
+        new ProjectController();
+    }
 
-        /*foreach ($getCols as $col){
-            array_push ( $tableContent['thead'], array_keys( $col ) );
-        }*/
-
-        foreach ($getCols as $col){
-            $colType = array_keys( $col );
-            foreach($colType as $key => $value) {
-                if( !is_numeric( $value ) ){
-                    array_push ( $tableContent['thead'], $value );
-                }
-            }
+    public function __construct() {
+        $this->classModel();
+        $this->classExtends();
+        switch ($_SERVER['QUERY_STRING'])
+        {
+            case 'global':
+            default:
+                $content = ProjectController::getProjects();
+                require(VIEW . $this->className() . '/times_table.php');
+                //require(LAYOUT . 'table/table.php');
+                break;
         }
-
-        while ($row = $getRows->fetch(PDO::FETCH_OBJ)){
-            array_push ( $tableContent['tbody'], $row );
-        }
-
-        return $tableContent;
     }
 }
