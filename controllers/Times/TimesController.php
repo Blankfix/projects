@@ -21,13 +21,15 @@ class TimesController{
     protected function classExtends(){
         require_once ( CONTROLLER. 'Project/ProjectController.php');
         new ProjectController();
+        require_once ( CONTROLLER. 'Sprint/SprintController.php');
+        new SprintController();
     }
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->classModel();
         $this->classExtends();
-        switch ($_SERVER['QUERY_STRING'])
-        {
+        switch ($_SERVER['QUERY_STRING']) {
             case 'global':
             default:
                 $content = ProjectController::getProjects();

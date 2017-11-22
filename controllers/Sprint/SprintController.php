@@ -1,6 +1,6 @@
 <?php
 
-class ProjectController extends TimesController {
+class SprintController extends TimesController {
 
     protected $do = null;
 
@@ -16,18 +16,16 @@ class ProjectController extends TimesController {
         $this->classModel();
     }
 
-    public function getProjects(){
+    public function getSprints($id){
         $content = null;
 
-        $projects = new Project();
-        $getProjects = $projects->getProjects();
-        //$sprints = new Sprint();
-        //$getProjects = $sprints->getSprints(2);
+        $sprints = new Sprint();
+        $getSprints = $sprints->getSprints($id);
 
         $table = array();
         $table['entries'] = array();
 
-        while($entry = $getProjects->fetch(PDO::FETCH_ASSOC) )
+        while($entry = $getSprints->fetch(PDO::FETCH_ASSOC) )
         {
             array_push( $table['entries'], $entry );
         }
