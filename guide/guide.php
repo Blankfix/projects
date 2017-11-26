@@ -7,7 +7,7 @@
 
         <div class="container">
 
-            <div class="row no-gutters">
+            <div class="no-gutters">
 
                 <?php require_once 'layout/nav.php'; ?>
                 <?php require_once 'layout/header.php'; ?>

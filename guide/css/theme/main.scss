@@ -15,10 +15,9 @@ body {
   font-family: 'Roboto', open sans;
 }
 
-//.content {
-//  //margin: 0 20%;
-//  width: 100%;
-//}
+.content {
+  margin: 0;
+}
 
 /* SECTION */
 
@@ -29,7 +28,6 @@ section {
 .section_content {
   flex-direction: row;
   display: flex;
-  margin-left: 40px;
 }
 
 /* SIDEBAR */

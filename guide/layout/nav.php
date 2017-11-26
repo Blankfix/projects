@@ -1,4 +1,4 @@
-<nav class="col-12 col-sm-2 nav" style="display: none;">
+<nav class="nav" style="display: none;">
     <div class="nav_container">
         <ul>
             <li><a href="#title" title="Titres">Titres</a></li>

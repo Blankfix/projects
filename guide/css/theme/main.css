@@ -12,14 +12,16 @@ body {
   position: relative;
   font-family: 'Roboto', open sans; }
 
+.content {
+  margin: 0; }
+
 /* SECTION */
 section {
   margin-bottom: 40px; }
 
 .section_content {
   flex-direction: row;
-  display: flex;
-  margin-left: 40px; }
+  display: flex; }
 
 /* SIDEBAR */
 .menu.fixed {
@@ -152,9 +154,6 @@ header .title {
     height: 80px;
     width: 80px;
     border: 1px solid #eee; }
-
-.container {
-  max-width: 100%; }
 
 .no-gutters {
   margin-right: -15px;
