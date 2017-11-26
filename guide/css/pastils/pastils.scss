@@ -1,0 +1,32 @@
+/* Pastils */
+.pastil {
+
+  @include flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+
+  &.indigo-400 {
+    background-color: #5C6BC0;
+  }
+
+  &.red-A200 {
+    background-color: #F44336;
+  }
+
+  &.red-400 {
+    background-color: #EF5350,
+  }
+
+  & .icon {
+    margin: 0;
+    padding: 0;
+    @include flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-size: 25px;
+  }
+}

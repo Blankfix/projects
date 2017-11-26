@@ -1,0 +1,126 @@
+// BUTTONS
+
+// A dégager
+@mixin flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin user-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+@mixin transition($args) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+
+
+// BUTTONS :: Simple
+
+.btn {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+  position: relative;
+  height: 44px;
+  width: 100%;
+  padding: 10px 0;
+  border: 0;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  outline: none !important;
+  @include transition(0.2s ease-out);
+
+  &:hover,
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
+  &.btn,
+  .btn-floating {
+    &:hover {
+      box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18),
+      0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  &.wave {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    @include user-select;
+    vertical-align: middle;
+    z-index: 1;
+    @include transition(all 0.3s ease-out);
+
+    &:active {
+      box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+
+      &:after {
+        padding-top: 0;
+        padding-left: 0;
+        margin-top: 0;
+        margin-left: 0;
+        opacity: 1;
+        transition: 0s;
+      }
+    }
+
+    &:after {
+      content: "";
+      background: rgba(255,255,255,0.3);
+      display: block;
+      position: absolute;
+      left: 0%;
+      top: 0;
+      border-radius: 50%;
+      padding-top: 240%;
+      padding-left: 240%;
+      margin-top: -120%;
+      margin-left: -120%;
+      opacity: 0;
+      transition: all 1s;
+    }
+  }
+
+  &.btn-floating {
+    @include flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+
+    & .icon {
+      margin: 0;
+      font-size: 25px;
+      color: #FFF;
+    }
+  }
+
+  &.bigger {
+    padding: 0 40px !important;
+    width: 100%;
+    min-width: 130px;
+
+    & .icon {
+      position: absolute;
+      top: 12px;
+      left: 10px;
+      font-size: 20px;
+      display: flex;
+      flex-direction: row;
+      color: #FFF;
+    }
+  }
+}

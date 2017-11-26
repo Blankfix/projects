@@ -1,0 +1,91 @@
+/* HELP */
+/*@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+.box { @include border-radius(10px); }
+*/
+
+/* GENERAL */
+
+body {
+  position: relative;
+  font-family: 'Roboto', open sans;
+}
+
+//.content {
+//  //margin: 0 20%;
+//  width: 100%;
+//}
+
+/* SECTION */
+
+section {
+  margin-bottom: 40px;
+}
+
+.section_content {
+  flex-direction: row;
+  display: flex;
+  margin-left: 40px;
+}
+
+/* SIDEBAR */
+.menu {
+ &.fixed {
+   padding: 20px;
+ }
+}
+
+@mixin flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 1270px) {
+  .content {
+    margin: 0;
+  }
+  section {
+    margin-bottom: 40px;
+    padding: 0;
+    width: 100%;
+  }
+  .section_content {
+    flex-direction: row;
+    display: flex;
+    margin-left: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .block {
+    & .block_inner {
+      padding-bottom: 30px;
+    }
+  }
+}
+
+// Style guide theme
+
+@import '../mixins/mixins';
+@import 'header',
+        'title',
+        'colors',
+        'blocks';
+
+// 'Projects' theme
+@import '../override/bootstrap-override';
+
+@import '../colors/colors';
+@import '../list/list';
+@import '../pastils/pastils';
+@import '../buttons/buttons';
+@import '../links/links';
+
+
+
+
