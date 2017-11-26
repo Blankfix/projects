@@ -1,0 +1,11 @@
+/* HEADER */
+header .title {
+  position: relative; }
+  header .title .title_icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 25px;
+    color: #FFF; }
+
+/*# sourceMappingURL=header.css.map */
